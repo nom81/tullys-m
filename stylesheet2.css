@@ -1,0 +1,999 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', YuGothic, '游ゴシック', Meirio, "メイリオ", sans-serif;
+  background-color: #fff;
+  cursor: default;
+  line-height: 1;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style: none;
+}
+
+#header-wrapper{
+  width: 100%;
+  height: 122px;
+  background-color: #fff;
+  border-bottom: 1px solid;
+  border-color: rgba(212, 212, 212);
+  position: static;
+}
+
+/* ヘッダー左ロゴ */
+.header-logo {
+  padding-top: 20px;
+  padding-left: 19px;
+  float: left;
+}
+
+.header-logo img {
+  width: 71px;
+  height: 82px;
+  transition: 0.9s;
+}
+
+.header-logo img:hover{
+  opacity: 0.7;
+}
+
+/*-------------------*/
+/* ヘッダー左メニュー */
+#header-left {
+  height: 122px;
+  float: left;
+  margin-left: 10px;
+  display: flex;
+}
+
+/* ul */
+.header-leftUl {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* li */
+.menu-list {
+  padding: 51px 0;
+  margin: 0 0 0 25px;
+  display: inline-block;
+  cursor: default;
+  line-height: 1;
+}
+
+/* メニュー */
+.menuTitle-link {
+  color: #000;
+  font-size: 13px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+/* メニューにカーソルのせた時 */
+.header-wrapper a:hover {
+  color: #d4d4d4;
+}
+
+/*アンダーラインの動き　できた*/
+.menu-list a::after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .7s;
+}
+.menu-list a:hover::after {
+  transform: scale(1, 1);
+}
+/* メニューのアンダーバーここまで */
+
+/*@media print, screen and(min-width: 768px) {
+
+#tullys_header header {
+  height: 120px;
+  min-width: auto;
+}
+
+#tullys_header .menu-list[aria-expanded="true"] .menuTitle-link::after {
+  left: 0;
+  right: 0;
+}*/
+
+/*商品情報*/
+#menu .menu-list:nth-child(1) .sub-menu {
+  background-image: url(tullys-img/menu01.jpg) no-repeat center center, #301c0f;
+  background-size: cover;
+}
+/*サービス*/
+#menu .menu-list:nth-child(2) .sub-menu {
+  background-image: url(tullys-img/menu02.jpg) no-repeat center center, #301c0f;
+  background-size: cover;
+}
+/*FYT*/
+#menu .menu-list:nth-child(4) .sub-menu {
+  background-image: url(tullys-img/menu03.jpg) no-repeat center center, #301c0f;
+  background-size: cover;
+}
+/*コーヒースクール*/
+#menu .menu-list:nth-child(5) .sub-menu {
+  background-image: url(tullys-img/menu04.jpg) no-repeat center center, #301c0f;
+  background-size: cover;
+}
+/*採用情報*/
+.menu-list:nth-child(6) .sub-menu {
+  background-image: url(tullys-img/menu05.jpg) no-repeat center center, #301c0f;
+  background-size: cover;
+}
+
+/*}*/
+
+/*サブメニュー　できた*/
+.sub-menu {
+  background-color: rgba(48, 28, 15,0.8);
+  display: none;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 122px;
+  height: auto 0;
+  z-index: 100;
+  align-items: baseline;
+  box-sizing: border-box;
+  padding: 50px 50px 12px;
+}
+/*サブメニューここまで*/
+
+/*サブメニューの中身*/
+.menu-listSub {
+  list-style: none;
+  margin: 26px auto 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-menu h3 {
+  font-weight: normal;
+  text-align: left;
+  font-size: 19px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 28px;
+}
+
+.listSub {  /*サブメニューコンテンツ*/
+  margin-bottom: 32px;
+  display: flex;
+  width: 25%;
+  font-size: 14px;
+}
+
+.listSub-link {
+  color: #fff;
+}
+
+
+/* ヘッダー右 */
+#header-right {
+  color: #000;
+  font-size: 13px;
+  cursor: pointer;
+  height: 122px;
+  float: right;
+  overflow: hidden;
+}
+
+#header-right a {
+  color: #000;
+}
+
+#header-right > ul > li {
+  height: 122px;
+  width: 120px;
+  border-left: 1px solid;
+  border-color: rgba(212, 212, 212);
+}
+
+/* LANGUAGE */
+.lang-list {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: table;
+}
+
+.lang-listEl {
+  padding: 0;
+  margin: 0 0 0 310px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.lang-text::after {
+  white-space: pre-wrap;
+  content: "   ▼";
+}
+
+/* 言語選択 */
+.heLangList{
+  padding: 0;
+  margin-left: 0;
+  display: none;
+  position: relative;
+}
+
+/* 問い合わせと会社情報 */
+.header-info {
+  position: relative;
+  display: table;
+  float: right;
+  line-height: 21px;
+}
+
+.info-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.info-text a {
+  margin-bottom: 12px;
+}
+
+
+
+/*------------------------*/
+
+/* メイン */
+main {
+  background-color: #fff;
+  width: 100%;
+  display: block;
+}
+
+/* メインイメージ */
+.pc-img {
+  height: 640px;
+  width: 100%;
+}
+
+/* トピックス */
+.topics-wrapper {
+  text-align: center;
+  width: 100%;
+  background-color: rgba(247, 246, 242);
+  margin-top: 80px;
+}
+
+/*↓共通↓*/
+.tp-headingMain {
+  font-family: 'Raleway';
+  font-size: 48px;
+  font-weight: lighter;
+  margin-bottom: 51px;
+  display: inline-block;
+  position: relative;
+}
+
+.tp-headingMain:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -20px; /* 下線の上下位置調整 */
+  display: block;
+  width: 65px; /* 下線の幅 */
+  height: 1px; /* 下線の太さ */
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50px);
+  transform: translate(-50%);/* 位置調整 */
+  background-color: rgba(180, 180, 180);/*下線の色*/
+}
+
+.tp-headingSub {
+  font-size: 18px;
+  font-weight: normal;
+  color: rgba(83, 83, 83);
+}
+/*↑共通↑*/
+
+.topi-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 新型コロナに対する対策とお知らせ */
+.emergency {
+  width: 100%;
+  background-color: rgba(247, 246, 242);
+}
+
+.emergency-inner {
+  margin: 0 30%;
+  padding: 50px 0 45px 0;
+  max-width: 510px;
+}
+
+/* サービス */
+.service {
+  text-align: center;
+  width: 100%;
+  padding: 88px 0 116px 0;
+}
+
+.service h2 {
+  margin-bottom: 65px;
+}
+
+/* アプリとか */
+.tp-service {
+  font-family: "hiragino Kaku Gothic Pro"
+  color: #000;
+  height: 368px;
+  width: 1035px;
+  margin: 0 114px;
+  padding: 0;
+  display: inline-block;
+}
+
+.tp-service a {
+  color: #000;
+}
+
+.service-list {
+  font-size: 0;
+  margin: 0 86px;
+  padding: 0;
+  height: 275px;
+  width: 863px;
+  display: inline-block;
+}
+
+.service-listLi {
+  font-size: 1rem;
+  display: inline-block;
+  float: left;
+  width: 29%;
+  height: 275px;
+  padding: 0 18px;
+  border-left: 1px dotted;
+  border-color: rgba(48, 29, 15);
+  transition: 0.9s;
+}
+
+.service-listLi03 {
+  font-size: 1rem;
+  display: inline-block;
+  float: left;
+  width: 29%;
+  height: 275px;
+  padding: 0 18px;
+  border-left: 1px dotted;
+  border-right: 1px dotted;
+  border-color: rgba(48, 29, 15);
+  transition: 0.9s;
+}
+
+.service-listLi:hover {
+  opacity: 0.7;
+}
+.service-listLi03:hover {
+  opacity: 0.7;
+}
+
+.service-listHead {
+  text-align: left;
+  line-height: 1;
+  margin: 0 0 30px 0;
+}
+
+.service-listHead img{
+  width: 45%;
+}
+
+.serviceList-img {
+  margin: 0 64px 27px 64px;
+}
+
+.serviceList-img img{
+  width: 120px;
+  vertical-align: top;
+}
+
+.serviceList-sub {
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  text-align: left;
+  line-height: 1;
+  font-size: 16px;
+  padding-right: 30px;
+  margin: 0 0 18px 0;
+  display: block;
+  position: relative;
+}
+
+.serviceList-sub::after {
+  content: '';
+  display: inline-block;
+  background-image: url("tullys-img/icon_arrow.png");
+  height: 13px;
+  width: 14px;
+  background-size: contain;
+  text-align: right;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.serviceList-text {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  text-align: left;
+  line-height: 18px;
+}
+
+
+/* service-viewAll-btn*/
+.viewAll-btn {
+  width: 90px;
+  height: 18px;
+  padding: 8px 35px;
+  margin: 55px 435px 0 435px;
+  border:2px solid rgba(214, 210, 207);
+  border-radius: 100px; /*ボタン円角にするやつ*/
+  background-color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  text-align: left;
+}
+
+.viewAll-btn::after {
+  content: '';
+  background-image: url("tullys-img/icon_arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 13px;
+  width: 14px;
+  vertical-align: baseline;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
+
+.viewAll-btn:hover {
+  opacity: 0.7;
+}
+
+.viewAllBtn-text {
+  font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 18px;
+}
+
+/*--------------------------*/
+/* find your tullys */
+.find_your_Tullys {
+  margin-bottom: 15px;
+  background-color: rgb(247, 246, 242);
+}
+
+.find_your_Tullys img {
+  width: 100%;
+}
+
+
+/* tp-fytInner */
+.tp-fytInner {
+  display: flex;
+  position: relative;
+  margin: 0 114px;
+  padding: 5% 0;
+  width: 82%;
+  justify-content: space-between;
+}
+
+.tp-fytList {
+  flex-wrap: wrap;
+  display: flex;
+  align-content: stretch;
+  width: 406px;
+  height: 451px;
+}
+
+.fytList {
+  font-size: 13px;
+  width: 45%;
+  display: inline-block;
+}
+
+.fytList-link {
+  display: block;
+}
+
+.fytList img {
+  width: 100%;
+  margin: 0 0 auto;
+}
+
+.fytList:nth-child(1) {
+  margin: 0;
+  display: inline-block;
+}
+
+.fytList:nth-child(2) {
+  margin-left: 36px;
+  display: block;
+}
+
+.fytList:nth-child(3) {
+  margin-top: 22px;
+  display: inline-block;
+}
+
+.fytList:nth-child(4) {
+  margin-top: 22px;
+  margin-left: 36px;
+}
+
+.fytListCaption {
+  margin-top: 6%;
+  text-align: center;
+  font-size: 13px;
+  display: block;
+}
+
+
+/* youtube*/
+.tp-fytMovieWrap {
+  width: 555px;
+  height: 453px;
+  display: inline-block;
+}
+
+.fyt-youtube{
+  top: 0;
+  right: 0;
+  width: 555px;
+  height: 324px;
+  border-style: none;
+  display: inline-block;
+}
+
+.tp-fytMovieLink {
+  text-align: center;
+  font-size: 13px;
+  width: 555px;
+  margin-top: 11px;
+}
+/*↓表示されてない*/
+.tp-fytMovieLink a::before {
+  content: '';
+  display: inline-block;
+  background: url(tullys-img/icon_blank.png) no-repeat left top;
+  background-size: contain;
+}
+
+/*fyt-viewAll-btn*/
+.fyt-viewAll-btn {
+  width: 90px;
+  height: 18px;
+  top: 100px;
+  left: 390px;
+  padding: 8px 35px;
+  border:2px solid rgba(214, 210, 207);
+  border-radius: 100px; /*ボタン円角にするやつ*/
+  background-color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  text-align: left;
+}
+
+.fyt-viewAll-btn::after {
+  content: '';
+  background-image: url("tullys-img/icon_arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 13px;
+  width: 14px;
+  vertical-align: baseline;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
+
+.fyt-viewAll-btn:hover {
+  opacity: 0.7;
+}
+
+.viewAllBtn-text {
+  font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 18px;
+}
+/*fyt-viewAll-btnここまで*/
+
+
+/*-------------------------*/
+
+/*タリーズニュース*/
+/*ニュースheading*/
+.tp-news {
+  padding: 90px 0 130px;
+}
+
+.tp-news h2 {
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.tp-headingMain {
+  font-size: 48px;
+  font-family: 'Raleway', sans-serif;
+  display: block;
+}
+
+/*news*/
+.tp-newsInner {
+  margin: 0 114px;
+}
+
+.newsMain {
+  width: 500px;
+  height: 565px;
+  margin-right: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*newsのliの中*/
+.newsMainItem {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #d6d2cf;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.newsMainInner {
+  display: flex;
+}
+
+.newsMainInner::hover {
+  opacity: 0.8;
+  transition: 0.3s
+}
+
+.newsMainCol:nth-child(1) {
+  margin-right: 18px;
+  width: 24%
+}
+
+.newsMainPic {
+  width: 100%;
+  display: block;
+}
+
+.newsMainCol:nth-child(2) {
+  width: 65%;
+}
+
+.newsMainDate {
+  margin-bottom: 12px;
+  color: #aca59f;
+  display: block;
+}
+
+.newsMainTitle {
+  line-height: 1.5;
+}
+
+/*左二つ*/
+.newsSub1 {
+  width: 230px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 36px;
+}
+.newsSub2 {
+  width: 230px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*PressRelease & infomationの共通*/
+.newsSubHead {
+  color: #535353;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 5px;
+  margin-bottom: 8%;
+  border-bottom: solid 8px #f7f6f2;
+}
+
+.newsSubItem {
+  font-size: 12px;
+  margin-bottom: 8%;
+}
+
+.newsSubInner::hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.newsSubDate {
+  color: #aca59f;
+  display: block;
+  margin-bottom: 4%;
+  font-weight: bold;
+}
+
+.newsSubTitle {
+  line-height: 1.5;
+}
+
+.newsSubMore {
+  text-align: right;
+  margin-top: 16%;
+}
+
+.newsSubMoreLink {
+  color: #301d0f;
+  font-family: 'Relative', sans-serif;
+  display: inline-block;
+  padding: 0 25px 4px 16px;
+  border-bottom: solid 1px #f7f6f2;
+  background: url("tullys-img/icon_arrow.png") no-repeat right center;
+}
+
+/*-------------------------*/
+/*パートナーシップ*/
+.tp-partner {
+  height: 235px;
+  width: 100%;
+  background-color: rgb(247, 246, 242);
+}
+
+.partnerInner {
+  padding: auto 0;
+  margin: 0 114px;
+  max-width: 1120px;
+}
+
+.partnerHead {
+  float: left;
+  margin-right: 370px;
+  font-size: 24px;
+  top: -10px;
+}
+
+.partnerLeadPic {
+  height: 22px;
+  top: -10px;
+}
+
+.partnerLinkWrap {
+  margin-top: 40px;
+  width: 1035px;
+  height: 100px;
+  display: flex;
+}
+
+.partnerLinkWrap a::after {
+  content: "";
+  display: block;
+  width: 37%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*採用情報*/
+.partnerLink-recruit {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 27px 18px 21px 221px;
+  position: relative;
+}
+
+.partnerLink-recruit::after {
+  background-image: url("tullys-img/partner_recruit.png");
+  border-radius: 10px 0 0 10px;
+}
+
+/*フランチャイズ*/
+.partnerLink-franchise {
+  width: 500px;
+  background-color: #fff;
+  margin-left: 36px;
+  border-radius: 10px;
+  padding: 27px 18px 21px 221px;
+  position: relative;
+}
+
+.partnerLink-franchise::after {
+  background-image: url("tullys-img/partner_franchise.png");
+  border-radius: 10px 0 0 10px;
+}
+
+/*中身共通*/
+.partnerLinkInner {
+  background: url("tullys-img/icon_arrow.png") no-repeat right center;
+}
+
+.partnerLinkLabel {
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 3.5%;
+  display: block;
+}
+
+.partnerLinkSub {
+  color: #535353;
+  font-size: 14px;
+}
+/*---------------------*/
+
+
+/* follow us*/
+.cm-share {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.shareHead {
+  font-family: 'Raleway', 'sans-serif';
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+.shareBody {
+  width: 220px;
+  height: 50px;
+  margin: 0 521px;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  background-image: url("tullys-img/footer_bg_pc.jpg");
+  background-color: rgba(33, 28,28);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footerNav {
+  max-width: 1200px;
+  width: 1112px;
+  margin: 0 76px;
+  padding-top: 46px;
+  display: flex;
+}
+
+.footerNavRow {
+  width: 50%;
+  display: block;
+}
+
+.footerNavItem {
+  display: block;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.footerNavLinkWrap-btn {
+  font-size: 0;
+  margin-bottom: 27px;
+  padding: 1px 0 9px 20px;
+  display: block;
+  background-image: url("tullys-img/footer_icon_link.png");
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footerNavLink {
+  color: white;
+  font-size: 13px;
+  border-bottom: 1px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.footerNavLink:hover {
+  opacity: 0.3s
+}
+
+.footerNavChild {
+  line-height: 16px;
+  padding: 0 0 13px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footerNavChildItem {
+  display: list-item;
+  text-align: left;
+  font-size: 12px;
+}
+
+.footerNavChildLink {
+  display: block;
+  margin-bottom: 9px;
+  text-align: left;
+  color: white;
+}
+
+.footerNavChildLink:before {
+  content: "-";
+  color: white;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.footerNavChildLink:hover {
+  opacity: 0.3s;
+}
+
+.footerPolicy {
+  display: block;
+  text-align: center;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255);
+}
+
+.footerPolicyNav {
+  text-align: center;
+  display: inline-block;
+  padding: 30px 0;
+}
+
+.footerPolicy-item {
+  color: white;
+  font-size: 12px;
+  margin: 0 15px;
+  line-height: 1;
+}
+
+.footer-copy {
+  color: white;
+  padding-bottom: 30px;
+  font-size: 10px;
+  text-align: center;
+}
